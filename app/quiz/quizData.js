@@ -520,7 +520,7 @@ function createF1Questions() {
         options: [
           option("q16-a", "实力下降，被围场淘汰，放弃挣扎", { stroll: 2, hulkenberg: 2, bottas: 1 }),
           option("q16-b", "赢完能赢的一切，开始感到无聊", { verstappen: 4, alonso: 2, hamilton: 2 }),
-          option("q16-c", "家庭或者其他原因，选择告别赛场", { perez: 3, sainz: 2, bottas: 2, albon: 1 }),
+          option("q16-c", "巅峰期刚过，察觉到自己水平可能下滑，选择退役", { sainz: 3, bottas: 3, hulkenberg: 3, perez: 2, albon: 1 }),
           option("q16-d", "退役不可能！我要一直跑，跑到老到跑不了", { alonso: 4, hamilton: 3, leclerc: 2, verstappen: 1 })
         ]
       },
@@ -606,7 +606,7 @@ function createF1Questions() {
       },
       {
         id: "q25",
-        title: "名场面：车队先喊 Box，进站口前一秒又喊 “Stay out, stay out!” 你会怎么回？",
+        title: "名场面：车队先喊 Box，进站口前一秒又喊 “Stay out, stay out!” 你会怎么回？（第一反应）",
         options: [
           option("q25-a", "“Ok fine.” 稳定情绪，方向盘一打，立刻 Stay out", { piastri: 3, russell: 1, bottas: 2, hulkenberg: 2, bortoleto: 2 }),
           option("q25-b", "“I got no choice.” 没有选择只能进站，接受浪费时间事实，不抱怨找别的方法补回来", { sainz: 3, perez: 2, albon: 2, stroll: 2 }),

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { f1Questions } from "./quizData";
 import { calculateF1Result } from "./quizLogic";
 
@@ -9,8 +9,13 @@ const emptyAnswers = Object.fromEntries(f1Questions.map((question) => [question.
 export default function QuizClient() {
   const quizRef = useRef(null);
   const resultRef = useRef(null);
+  const [questionOrder, setQuestionOrder] = useState(f1Questions);
   const [answers, setAnswers] = useState(emptyAnswers);
   const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    setQuestionOrder(shuffleQuestions(f1Questions));
+  }, []);
 
   const selectedAnswerIds = useMemo(
     () => f1Questions.map((question) => answers[question.id] || null),
@@ -65,14 +70,14 @@ export default function QuizClient() {
         </div>
 
         <form id="f1-quiz-form" className="f1-question-list">
-          {f1Questions.map((question, questionIndex) => (
+          {questionOrder.map((question, questionIndex) => (
             <fieldset className="f1-question" key={question.id}>
               <legend>
                 <span>{String(questionIndex + 1).padStart(2, "0")}</span>
                 {question.title}
               </legend>
               <div className="f1-options">
-                {question.options.map((option) => (
+                {question.options.map((option, optionIndex) => (
                   <label className="f1-option" key={option.id}>
                     <input
                       type="radio"
@@ -82,7 +87,7 @@ export default function QuizClient() {
                       onChange={() => updateAnswer(question.id, option.id)}
                     />
                     <span>
-                      {option.choice ? <b>{option.choice}</b> : null}
+                      <b>{option.choice || String.fromCharCode(65 + optionIndex)}</b>
                       {option.label}
                     </span>
                   </label>
@@ -108,10 +113,29 @@ export default function QuizClient() {
   );
 }
 
+function shuffleQuestions(questions) {
+  const shuffledQuestions = [...questions];
+
+  for (let index = shuffledQuestions.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffledQuestions[index], shuffledQuestions[swapIndex]] = [shuffledQuestions[swapIndex], shuffledQuestions[index]];
+  }
+
+  return shuffledQuestions;
+}
+
 function QuizResult({ result, resultRef }) {
-  const accent = result.driver.accentColor || result.driver.color;
-  const primary = result.driver.color;
-  const secondary = result.driver.secondaryColor || result.driver.color;
+  const [selectedMatchIndex, setSelectedMatchIndex] = useState(0);
+  const selectedMatch = result.matches[selectedMatchIndex] || result.matches[0];
+  const selectedDriver = selectedMatch.driver;
+  const accent = selectedDriver.accentColor || selectedDriver.color;
+  const primary = selectedDriver.color;
+  const secondary = selectedDriver.secondaryColor || selectedDriver.color;
+  const typeLabel = selectedMatchIndex === 0 ? "你的人格类型是：" : "另一个很像你的类型：";
+
+  useEffect(() => {
+    setSelectedMatchIndex(0);
+  }, [result]);
 
   return (
     <section
@@ -128,34 +152,34 @@ function QuizResult({ result, resultRef }) {
       <div className="f1-result-main">
         <figure className="f1-driver-card">
           <figcaption>
-            <span className="f1-type-label">你的人格类型是：</span>
-            <strong id="result-driver-name">{result.driver.nickname}</strong>
+            <span className="f1-type-label">{typeLabel}</span>
+            <strong id="result-driver-name">{selectedDriver.nickname}</strong>
             <span id="result-driver-team">
-              {result.driver.name} · {result.driver.team}
+              {selectedDriver.name} · {selectedDriver.team}
             </span>
             <div className="f1-result-stats">
-              <span id="result-driver-number">比赛号码 #{result.driver.number}</span>
-              <span id="result-match-percent">匹配度 {result.percent}%</span>
+              <span id="result-driver-number">比赛号码 #{selectedDriver.number}</span>
+              <span id="result-match-percent">匹配度 {selectedMatch.percent}%</span>
             </div>
           </figcaption>
           <img
             id="result-avatar"
-            src={result.driver.image}
-            alt={`${result.driver.name} 卡通图片`}
+            src={selectedDriver.image}
+            alt={`${selectedDriver.name} 卡通图片`}
             onError={(event) => {
               event.currentTarget.removeAttribute("src");
-              event.currentTarget.alt = `${result.driver.name} 图片没有加载成功`;
+              event.currentTarget.alt = `${selectedDriver.name} 图片没有加载成功`;
             }}
           />
         </figure>
         <p className="f1-kicker">人格解读</p>
         <h2 id="result-headline">
-          {result.driver.nickname}（{result.driver.name}）
+          {selectedDriver.nickname}（{selectedDriver.name}）
         </h2>
-        <p id="result-summary">{result.driver.summary}</p>
-        <p id="result-detail">{result.driver.detail}</p>
+        <p id="result-summary">{selectedDriver.summary}</p>
+        <p id="result-detail">{selectedDriver.detail}</p>
         <div id="result-traits" className="f1-traits">
-          {result.driver.traits.map((trait) => (
+          {selectedDriver.traits.map((trait) => (
             <span key={trait}>{trait}</span>
           ))}
         </div>
@@ -165,7 +189,13 @@ function QuizResult({ result, resultRef }) {
         <h3>最接近你的前三名</h3>
         <div id="result-podium">
           {result.matches.map((match, index) => (
-            <article className="f1-podium-item" key={match.driver.id}>
+            <button
+              className="f1-podium-item"
+              type="button"
+              key={match.driver.id}
+              aria-pressed={selectedMatchIndex === index}
+              onClick={() => setSelectedMatchIndex(index)}
+            >
               <span className="f1-rank">P{index + 1}</span>
               <div>
                 <strong>{match.driver.nickname}</strong>
@@ -176,7 +206,7 @@ function QuizResult({ result, resultRef }) {
                   匹配度 {match.percent}% · {match.score} pts
                 </small>
               </div>
-            </article>
+            </button>
           ))}
         </div>
       </aside>

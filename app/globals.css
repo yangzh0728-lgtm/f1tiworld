@@ -841,7 +841,7 @@ h1 {
 
 .f1-question-list {
   display: grid;
-  gap: 18px;
+  gap: 28px;
 }
 
 .f1-question {
@@ -1071,11 +1071,34 @@ h1 {
 }
 
 .f1-podium-item {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   justify-content: flex-start;
   padding: 14px;
   border: 1px solid var(--f1-line);
   border-radius: 8px;
   background: #fff;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.f1-podium-item:hover,
+.f1-podium-item:focus-visible,
+.f1-podium-item[aria-pressed="true"] {
+  border-color: var(--driver-color);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
+  transform: translateY(-1px);
+}
+
+.f1-podium-item[aria-pressed="true"] .f1-rank {
+  background: var(--driver-color);
 }
 
 .f1-rank {
