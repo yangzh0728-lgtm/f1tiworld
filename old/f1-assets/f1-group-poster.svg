@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="2000" viewBox="0 0 3000 2000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0e12"/>
+      <stop offset="0.58" stop-color="#1b222c"/>
+      <stop offset="1" stop-color="#680717"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262c36" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#080a0d" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000000" flood-opacity="0.38"/>
+    </filter>
+    <pattern id="speedLines" width="220" height="220" patternUnits="userSpaceOnUse" patternTransform="rotate(-22)">
+      <rect width="220" height="220" fill="none"/>
+      <rect x="0" y="0" width="8" height="220" fill="#ffffff" opacity="0.055"/>
+    </pattern>
+    <clipPath id="photoClip">
+      <rect x="0" y="0" width="362" height="256" rx="8"/>
+    </clipPath>
+    <style>
+      .title { font: 900 112px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; letter-spacing: 0; fill: #ffffff; }
+      .subtitle { font: 800 42px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; letter-spacing: 0; fill: #c4ccd6; }
+      .year { font: 900 78px "SF Mono", "Roboto Mono", Menlo, monospace; fill: #ffffff; }
+      .name { font: 800 21px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; letter-spacing: 0; fill: #f8f8f8; text-anchor: middle; }
+      .small { font: 600 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #bcc4ce; }
+    </style>
+  </defs>
+
+  <rect width="3000" height="3000" fill="url(#bg)"/>
+  <rect width="3000" height="3000" fill="url(#speedLines)"/>
+  <rect x="-120" y="150" width="1320" height="310" rx="8" fill="#e80020" opacity="0.32"/>
+  <rect x="2080" y="1620" width="1040" height="260" rx="8" fill="#ffffff" opacity="0.09"/>
+  <path d="M2520 120 L2880 120 L2660 480 L2300 480 Z" fill="#e80020" opacity="0.26"/>
+
+  <text class="title" x="120" y="210">F1 GRID</text>
+  <rect x="120" y="242" width="540" height="16" rx="8" fill="#e80020"/>
+  <text class="subtitle" x="120" y="318">DRIVER POSTER</text>
+  <text class="year" x="2880" y="210" text-anchor="end">2026</text>
+
+  <g id="drivers" filter="url(#shadow)">
+    <g transform="translate(120 470)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Max Verstappen.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">MAX VERSTAPPEN</text>
+    </g>
+    <g transform="translate(586 470)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Lewis Hamilton.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">LEWIS HAMILTON</text>
+    </g>
+    <g transform="translate(1052 470)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Charles Leclerc.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">CHARLES LECLERC</text>
+    </g>
+    <g transform="translate(1518 470)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Lando Norris.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">LANDO NORRIS</text>
+    </g>
+    <g transform="translate(1984 470)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Oscar Piastri.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">OSCAR PIASTRI</text>
+    </g>
+    <g transform="translate(2450 470)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="George Russell.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">GEORGE RUSSELL</text>
+    </g>
+
+    <g transform="translate(120 856)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Carlos Sainz.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">CARLOS SAINZ</text>
+    </g>
+    <g transform="translate(586 856)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Fernando Alonso.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">FERNANDO ALONSO</text>
+    </g>
+    <g transform="translate(1052 856)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Kimi Antonelli.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">KIMI ANTONELLI</text>
+    </g>
+    <g transform="translate(1518 856)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Alex Albon.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">ALEX ALBON</text>
+    </g>
+    <g transform="translate(1984 856)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Pierre Gasly.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">PIERRE GASLY</text>
+    </g>
+    <g transform="translate(2450 856)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Esteban Ocon.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">ESTEBAN OCON</text>
+    </g>
+
+    <g transform="translate(120 1242)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Nico Hulkenberg.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">NICO HULKENBERG</text>
+    </g>
+    <g transform="translate(586 1242)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Gabriel Bortoleto.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">GABRIEL BORTOLETO</text>
+    </g>
+    <g transform="translate(1052 1242)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Oliver Bearman.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">OLIVER BEARMAN</text>
+    </g>
+    <g transform="translate(1518 1242)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Isack Hadjar.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">ISACK HADJAR</text>
+    </g>
+    <g transform="translate(1984 1242)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Liam Lawson.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">LIAM LAWSON</text>
+    </g>
+    <g transform="translate(2450 1242)">
+      <rect width="430" height="344" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="320" rx="5" fill="#e80020"/>
+      <g transform="translate(34 16)" clip-path="url(#photoClip)"><image href="Lance Stroll.png" width="362" height="256" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="275" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="309">LANCE STROLL</text>
+    </g>
+
+    <g transform="translate(586 1628)">
+      <rect width="430" height="270" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="246" rx="5" fill="#e80020"/>
+      <g transform="translate(34 10)" clip-path="url(#photoClip)"><image href="Franco Colapinto.png" width="362" height="210" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="202" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="236">FRANCO COLAPINTO</text>
+    </g>
+    <g transform="translate(1052 1628)">
+      <rect width="430" height="270" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="246" rx="5" fill="#e80020"/>
+      <g transform="translate(34 10)" clip-path="url(#photoClip)"><image href="Sergio Perez.png" width="362" height="210" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="202" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="236">SERGIO PEREZ</text>
+    </g>
+    <g transform="translate(1518 1628)">
+      <rect width="430" height="270" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="246" rx="5" fill="#e80020"/>
+      <g transform="translate(34 10)" clip-path="url(#photoClip)"><image href="Valtteri Bottas.png" width="362" height="210" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="202" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="236">VALTTERI BOTTAS</text>
+    </g>
+    <g transform="translate(1984 1628)">
+      <rect width="430" height="270" rx="8" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+      <rect x="12" y="12" width="10" height="246" rx="5" fill="#e80020"/>
+      <g transform="translate(34 10)" clip-path="url(#photoClip)"><image href="Arvid Lindblad.png" width="362" height="210" preserveAspectRatio="xMidYMin slice"/></g>
+      <rect x="24" y="202" width="382" height="52" rx="8" fill="#05070a" opacity="0.72"/>
+      <text class="name" x="215" y="236">ARVID LINDBLAD</text>
+    </g>
+  </g>
+
+  <text class="small" x="120" y="1928">Built from local f1-assets images</text>
+</svg>

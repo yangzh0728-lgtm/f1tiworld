@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 车手人格测试 · 答题页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="f1-page">
+    <div class="f1-shell">
+      <header class="f1-quiz-cover">
+        <nav class="f1-topbar" aria-label="F1 quiz navigation">
+          <a class="f1-brand" href="f1index.html">F1 Driver Match</a>
+          <a class="f1-season" href="f1index.html">返回封面</a>
+        </nav>
+        <div class="f1-quiz-cover-copy">
+          <p class="f1-kicker">Race Control</p>
+          <h1>选择最像你的反应</h1>
+          <p>40 道情境题，全部答完后查看你的车手人格类型。</p>
+        </div>
+      </header>
+
+      <main>
+        <section id="f1-quiz" class="f1-quiz" aria-labelledby="quiz-title">
+          <div class="f1-quiz-head">
+            <div>
+              <p class="f1-kicker">Question Board</p>
+              <h2 id="quiz-title">你的比赛选择</h2>
+            </div>
+            <p id="quiz-progress" class="f1-progress-text">0 / 40</p>
+          </div>
+
+          <div class="f1-progress-bar" aria-hidden="true">
+            <span id="quiz-progress-bar"></span>
+          </div>
+
+          <form id="f1-quiz-form" class="f1-question-list"></form>
+
+          <div class="f1-actions">
+            <button id="submit-quiz" class="f1-submit" type="button" disabled>查看我的车手</button>
+            <p class="f1-submit-hint">全选完才会放行。围场已经够乱了，起码把题做完整。</p>
+            <button id="reset-quiz" class="f1-reset" type="button">重新选择</button>
+          </div>
+        </section>
+
+        <section id="f1-result" class="f1-result" hidden aria-live="polite">
+          <div class="f1-result-main">
+            <figure class="f1-driver-card">
+              <figcaption>
+                <span class="f1-type-label">你的人格类型是：</span>
+                <strong id="result-driver-name"></strong>
+                <span id="result-driver-team"></span>
+                <div class="f1-result-stats">
+                  <span id="result-driver-number"></span>
+                  <span id="result-match-percent"></span>
+                </div>
+              </figcaption>
+              <img id="result-avatar" alt="" />
+            </figure>
+            <p class="f1-kicker">人格解读</p>
+            <h2 id="result-headline"></h2>
+            <p id="result-summary"></p>
+            <p id="result-detail"></p>
+            <div id="result-traits" class="f1-traits"></div>
+          </div>
+
+          <aside class="f1-podium" aria-label="Closest driver matches">
+            <h3>最接近你的前三名</h3>
+            <div id="result-podium"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="f1-quiz.js?v=20260412-17"></script>
+  </body>
+</html>
