@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "latest",
+    "@vercel/speed-insights": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
